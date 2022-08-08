@@ -4,25 +4,30 @@ paginate: true
 footer: '徐堂鑫 2022-07-15'
 style: 
 ---
-<!-- ![bg right](./imgs/npm.png) -->
-幻灯片1
+![bg fit blur:4px](./imgs/pic1.png)
+## 浅谈element ui 组件库
+* element 项目结构
+* 如何支持自定义主题的
+* Vue.use()
+* 如何做到按需引入的
+* 依赖了哪些第三方库
+* 以button组件和avatar组件为例 感受element ui的编码风格
 ---
-幻灯片2
+#### github地址：https://github.com/ElemeFE/element
+![h:400px](./imgs/pic2.png)
 
-* asdf
-* asdf
 ---
-幻灯片3
+#### 项目结构：
+![bg h:400px right](./imgs/pic3.png)
+- build webpack编译配置文件目录
+- examples element ui官方主页项目目录
+- packages 各个组件的源码目录
+- src 项目使用到的公共指令、工具集等源码存放目录
+- test 单元测试相关
+- type typescript相关文件包
 
-* asdf
-* asdf
+
 ---
-幻灯片4
 
-* asdf
-* asdf
 ---
-幻灯片5
-
-* asdf
-* asdf
+---
