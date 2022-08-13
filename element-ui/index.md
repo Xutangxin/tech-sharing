@@ -8,7 +8,6 @@ style:
 ## 浅谈element ui 组件库
 * element 项目结构
 * 如何支持自定义主题的
-* Vue.use()
 * 如何做到按需引入的
 * 依赖了哪些第三方库
 * 以button组件和avatar组件为例 感受element ui的编码风格
@@ -36,9 +35,50 @@ style:
 ![fit](./imgs/pic4.png)
 
 ---
+## 引入方式
+### cdn
+  * 优点：不需要构建工具，开箱即用
+  * 缺点：全量引入了所有组件，体积非常大
+### npm
+ * 官方推荐的引入方式，能更好地和webpack打包工具配合使用，支持完整引入和按需引入
 ---
+### 为什么需要按需引入？
+  完整引入的组件包体积较大，项目中通常不会用到所有类型的element组件，因此会有资源的浪费
+
 ---
+## 如何支持按需引入？
+### 按需引入的方式
+```js
+import Vue from 'vue';
+import { Button, Select } from 'element-ui';
+import App from './App.vue';
+
+Vue.component(Button.name, Button);
+Vue.component(Select.name, Select);
+/* 或写为
+ * Vue.use(Button)
+ * Vue.use(Select)
+ */
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
+});
+```
 ---
+### 如何支持按需引入的？
+以button组件为例，当单独引入button组件时：
+```js
+import { Button } from 'element-ui';
+```   
+其实是通过webpack插件babel-plugin-component将上述代码转换成：
+```js
+var button = require('element-ui/lib/button')
+
+require('element-ui/lib/theme-chalk/button.css')
+```
+
+
 ---
 ---
 ---
