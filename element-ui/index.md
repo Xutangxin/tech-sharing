@@ -1,6 +1,7 @@
 ---
 marp: true
 paginate: true
+**papaginate**: true 
 footer: '徐堂鑫 2022-07-15'
 style: 
 ---
@@ -9,7 +10,7 @@ style:
 * element 项目结构
 * 如何支持自定义主题的
 * 如何做到按需引入的
-* 依赖了哪些第三方库
+* element ui工程化思想
 * 以button组件和avatar组件为例 感受element ui的编码风格
 ---
 #### github地址：https://github.com/ElemeFE/element
@@ -24,7 +25,9 @@ style:
 - src 项目使用到的公共指令、工具集等源码存放目录
 - test 单元测试相关
 - type typescript相关文件包
-
+  
+---
+组件目录通常由 index.js 和 src 组成，src 下的 vue 文件是生成组件的逻辑代码，index.js 文件是组件的注册和导出。如果有README.md文件，一般就是该组件的解释说明
 
 ---
 ## element ui 如何支持自定义主题的?
@@ -77,9 +80,13 @@ var button = require('element-ui/lib/button')
 
 require('element-ui/lib/theme-chalk/button.css')
 ```
-
+这样就精准地引入了对应 lib 下的 Button 组件的 JS 和 CSS 代码了，也就实现了按需引入 Button 组件。
 
 ---
+组件的install方法为Vue.use()提供了入口
+
+![fit](./imgs/pic5.png)
+
 ---
 ---
 ---
