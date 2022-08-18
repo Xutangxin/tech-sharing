@@ -1,7 +1,7 @@
 ---
 marp: true
 paginate: true
-**papaginate**: true 
+papaginate: true 
 footer: '徐堂鑫 2022-07-15'
 style: 
 ---
@@ -80,7 +80,7 @@ var button = require('element-ui/lib/button')
 
 require('element-ui/lib/theme-chalk/button.css')
 ```
-这样就精准地引入了对应 lib 下的 Button 组件的 JS 和 CSS 代码了，也就实现了按需引入 Button 组件。
+这样就精准地引入了对应lib（打包后的文件夹）下的 Button 组件的 JS 和 CSS 代码了，也就实现了按需引入 Button 组件。
 
 ---
 组件的install方法为Vue.use()提供了入口
@@ -88,6 +88,20 @@ require('element-ui/lib/theme-chalk/button.css')
 ![fit](./imgs/pic5.png)
 
 ---
+## element ui工程化思想
+
+# 什么是（前端）工程化呢？
+
 ---
+* 将系统化、规范化、可度量的方法用于前端应用的开发、运行和维护过程
+
+* 用工程化方法构建和维护有效的、实用的、高质量的前端应用
+
+通俗理解：通过各种工具和技术或思想，提升前端开发效率的过程（标准化、组件化、模块化、自动化。。。）
+
 ---
----
+el-button 源码：
+https://github1s.com/ElemeFE/element/blob/dev/packages/button/src/button.vue
+
+el-avatar 源码：
+https://github1s.com/ElemeFE/element/blob/dev/packages/avatar/src/main.vue
