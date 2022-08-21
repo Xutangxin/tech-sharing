@@ -11,7 +11,8 @@ style:
 * 如何支持自定义主题的
 * 如何做到按需引入的
 * element ui工程化思想
-* 以button组件和avatar组件为例 感受element ui的编码风格
+* 以el-avatar组件为例说说render函数
+* 了解Vue渲染过程
 ---
 #### github地址：https://github.com/ElemeFE/element
 ![h:400px](./imgs/pic2.png)
@@ -100,8 +101,36 @@ require('element-ui/lib/theme-chalk/button.css')
 通俗理解：通过各种工具和技术或思想，提升前端开发效率的过程（标准化、组件化、模块化、自动化。。。）
 
 ---
-el-button 源码：
-https://github1s.com/ElemeFE/element/blob/dev/packages/button/src/button.vue
+### element ui 做了哪些前端工程化工作
+* eslint
+  保证代码风格/规范的基本一致性
+* webpack
+* 模块化
+  公共模块的抽取（directives、locale、mixins、transitions、utils等）
+* 测试
+  使用了测试框架karma为组件编写测试
 
-el-avatar 源码：
+---
+从我们项目package.json截的图：
+
+![fit](./imgs/pic8.png)
+
+---
+jest官方文档：https://www.jestjs.cn/
+
+![fit](./imgs/pic7.png)
+
+---
+### el-avatar 源码：
 https://github1s.com/ElemeFE/element/blob/dev/packages/avatar/src/main.vue
+
+### 为什么/什么情况适合使用render函数:
+ https://v2.cn.vuejs.org/v2/guide/render-function.html
+![fit](./imgs/pic6.png)
+tips: 你可以通过使用某些插件来达到通过写jsx来写render函数的效果
+
+---
+Vue 的渲染过程
+
+---
+# 谢谢聆听✌️😄😄😊😊
