@@ -130,7 +130,12 @@ https://github1s.com/ElemeFE/element/blob/dev/packages/avatar/src/main.vue
 tips: 你可以通过使用某些插件来达到通过写jsx来写render函数的效果
 
 ---
-Vue 的渲染过程
+ ## Vue 的编译过程
+ template=>AST（抽象语法树）=>render函数=>vnode（虚拟dom）=>update(diff&patch)=>UI
 
 ---
+![fit](./imgs/pic9.jpg)
+
+---
+
 # 谢谢聆听✌️😄😄😊😊
