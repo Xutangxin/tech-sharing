@@ -131,10 +131,33 @@ tips: 你可以通过使用某些插件来达到通过写jsx来写render函数�
 
 ---
  ## Vue 的编译过程
- template=>AST（抽象语法树）=>render函数=>vnode（虚拟dom）=>update(diff&patch)=>UI
+ template=>AST（抽象语法树）=>render函数=>vnode（虚拟dom）=>update(diff&patch)=>UI（真实dom）
 
 ---
 ![fit](./imgs/pic9.jpg)
+
+---
+template=>AST
+```html
+<div id="test">helloworld</div>
+```
+```js
+{
+    type: 1, // 1:标签元素 2:表达式 3:文本
+    tag: "div",
+    attrsList: [{name: "id", value: "test"}],
+    attrsMap: {id: "test"},
+    parent: undefined,
+    children: [{
+        type: 3,
+        text: 'helloworld'
+      }
+    ],
+    plain: true,
+    attrs: [{name: "id", value: "'test'"}]
+  }
+```
+
 
 ---
 
