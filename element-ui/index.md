@@ -131,7 +131,7 @@ tips: 你可以通过使用某些插件来达到通过写jsx来写render函数�
 
 ---
  ## Vue 的编译过程
- template=>AST（抽象语法树）=>render函数=>vnode（虚拟dom）=>update(diff&patch)=>UI（真实dom）
+ template=>AST（抽象语法树）=>render函数字符串=>vdom（虚拟dom）=>update(diff&patch)=>UI（真实dom）
 
 ---
 ![fit](./imgs/pic9.jpg)
@@ -157,8 +157,26 @@ template=>AST
     attrs: [{name: "id", value: "'test'"}]
   }
 ```
+---
+AST=>render函数字符串
+递归AST,得到render字符串
+参考文章：https://juejin.cn/post/6995232345749979172
 
+模板：
+```html
+<p>{{flag ? message : 'no message found'}}</p>
 
+```
+通过模板解析后的AST生成的render字符串：
+```js
+with(this){return _c('p',[_v(_s(flag ? message : 'no message found'))])}
+```
+---
+虚拟dom diff&patch
+* diff
+找出有必要更新的节点更新，没有更新的节点就不要动。diff的过程就是找出哪些更新哪些不更新
+* patch
+将一个虚拟dom添加到文档中生成真实dom的过程
 ---
 
 # 谢谢聆听✌️😄😄😊😊
