@@ -2,15 +2,16 @@
 marp: true
 paginate: true
 papaginate: true 
-footer: '徐堂鑫 2022-07-15'
+footer: '徐堂鑫 2022-09'
 style: 
 ---
 ![bg fit blur:4px](./imgs/pic1.png)
 ## 浅谈element ui 组件库
 * element 项目结构
 * 如何支持自定义主题的
-* 如何做到按需引入的
+* 引入方式 & 如何做到按需引入的
 * element ui工程化思想
+* ~~element ui 编码风格~~（本来打算讲的，但目前还输出不了这部分内容）
 * 以el-avatar组件为例说说render函数
 * 了解Vue渲染过程
 ---
